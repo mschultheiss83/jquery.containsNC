@@ -1,3 +1,5 @@
+//@see https://css-tricks.com/snippets/jquery/make-jquery-contains-case-insensitive/
+
 jQuery.expr[":"].containsNC = function(elem, i, match) {
-    return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || '').toLowerCase()) > -1;
+    return jQuery(elem).text().toUpperCase().indexOf((match[3] || '').toUpperCase()) >= 0;
 };
